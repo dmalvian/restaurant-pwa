@@ -1,0 +1,530 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: #424242;
+  background-color: #f8f5f1;
+}
+
+img {
+  display: block;
+}
+
+/* Skip Link */
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #222831;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header */
+
+.header {
+  padding: 5px 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  transition: min-height 0.3s;
+  background-color: #fff;
+  border-bottom: 1px solid #E0E0E0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.header__logo {
+  margin-left: 20px;
+}
+
+.header__logo img {
+  width: 70px;
+}
+
+.header__menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.header__menu button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  font-size: 2em;
+  color: #424242;
+  cursor: pointer;
+}
+
+/* Nav */
+.nav {
+  z-index: 10;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  background-color: #fff;
+
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.nav__list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style-type: none;
+}
+
+.nav__item {
+  display: list-item;
+  border-bottom: 1px solid #E0E0E0;
+  width: 100%;
+  text-align: center;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.nav__item:hover {
+  background-color: #f7f6e7;
+  text-decoration: underline;
+  color: #000;
+}
+
+.nav a {
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+  color: #616161;
+}
+
+.open {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  min-height: 380px;
+  width: 100%;
+  text-align: center;
+  background-image: url("./heros/hero-main-small.jpg");
+  background-position: center;
+  background-color: #222831;
+}
+
+.hero__inner {
+  margin: 0 auto;
+  min-height: 380px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero__title {
+  color: #fff;
+  font-weight: 500;
+  font-size: 2.5em;
+}
+
+.hero__tagline {
+  color: #fff;
+  margin-top: 16px;
+  font-size: 1.1em;
+  font-weight: 300;
+}
+
+/* Feature */
+
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  justify-content: space-around;
+  padding: 32px;
+  background-color: #f8f5f1;
+  text-align: center;
+}
+
+.feature-item img {
+  margin: auto;
+  width: 75px;
+}
+
+.feature-item figcaption {
+  margin: 5px 0;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+/* Main */
+
+main {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+}
+
+/* Content */
+
+.content {
+  width: 100%;
+  padding: 32px;
+  min-height: 400px;
+}
+
+.content__title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 450;
+}
+
+.content__title::after {
+  content: '';
+  margin-top: 16px;
+  display: block;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* Restaurants Container */
+
+restaurants-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 30px auto;
+  padding: 5px;
+  text-align: left;
+  overflow: auto;
+  place-items: center;
+}
+
+/* Restaurant Item */
+
+restaurant-item {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.restaurant-item__header {
+  padding: 16px 32px 0 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.restaurant-item__content {
+  padding: 0 32px 32px 32px;
+}
+
+.restaurant-item__thumbnail {
+  aspect-ratio: 6 / 4;
+  width: 100%;
+  height: auto;
+}
+
+.restaurant-item__city {
+  font-size: 1.2em;
+  font-weight: 500;
+  display: inline-block;
+  padding: 5px 0;
+  color: #0071c2;
+}
+
+.restaurant-item__city ion-icon {
+  font-size: 1.1em;
+  vertical-align: top;
+}
+
+.restaurant-item__rating {
+  height: fit-content;
+  font-size: 1em;
+  font-weight: 400;
+  padding: 0.3em;
+  color: #fff;
+  background-color: #003580;
+  border-radius: 4px 4px 4px 0;
+}
+
+.restaurant-item__name {
+  font-weight: 500;
+  font-size: 1.4em;
+  margin-top: 8px;
+  transition: 0.3s color;
+  text-align: center;
+}
+
+.restaurant-item__name:hover {
+  color: #ff8303;
+}
+
+.restaurant-item__name a {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  text-decoration: none;
+  color: inherit;
+  vertical-align: middle;
+}
+
+.restaurant-item__description {
+  margin-top: 8px;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/* Restaurant Detail */
+
+restaurant-detail {
+  width: 100%;
+  font-size: 1em;
+}
+
+.restaurant-detail__title {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 450;
+}
+
+.restaurant-detail__subtitle {
+  font-size: 1.2em;
+  font-weight: 450;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.restaurant-detail__subtitle ion-icon {
+  font-size: 1.1em;
+  vertical-align: top;
+}
+
+.restaurant-detail__image {
+  aspect-ratio: 6 / 4;
+  width: 100%;
+  height: auto;
+  max-width: 750px;
+  margin: auto;
+}
+
+.restaurant-detail__address {
+  padding-left: 25px;
+}
+
+.restaurant-detail__desc {
+  padding-left: 25px;
+}
+
+.restaurant-detail__rating {
+  padding-left: 25px;
+}
+
+categories-list ul {
+  padding-left: 45px;
+}
+
+foods-list ul {
+  padding-left: 45px;
+}
+
+drinks-list ul {
+  padding-left: 45px;
+}
+
+reviews-container {
+  padding: 0 25px;
+  margin-top: 12px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+review-item {
+  padding: 12px;
+  border: 1px solid rgb(208, 210, 211);
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.review-item__name {
+  color: #ff8303;
+  font-weight: 450;
+}
+
+.review-item__review {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.review-item__date {
+  font-size: 0.85em;
+  text-align: right;
+}
+
+review-form form {
+  padding: 0 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Form */
+
+.form-input {
+  width: 100%;
+}
+
+.form-input input,
+.form-input textarea {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid rgb(208, 210, 211);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-input input:focus,
+.form-input textarea:focus {
+  outline-color: #ff8303;
+}
+
+.form-input textarea {
+  min-height: 100px;
+}
+
+.btn {
+  width: fit-content;
+  padding: 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background-color: #0071c2;
+  color: #fff;
+  font-weight: 450;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #003580;
+}
+
+/* Margin */
+
+.mt {
+  margin-top: 12px;
+}
+
+/* Fallback */
+
+.fallback__image {
+  margin: auto;
+  margin-bottom: 4px;
+}
+
+.fallback__title {
+  margin-bottom: 4px;
+}
+
+/* Loading */
+
+loading-bar {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  height: 200px;
+}
+
+.loading__image {
+  margin: auto;
+}
+
+.loading__title {
+  font-weight: 400;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Footer */
+
+footer {
+  background-color: #222831;
+  padding: 2em;
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  text-align: center;
+  margin: 0;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 300;
+}
+
+/*
+   Favorite
+*/
+
+.favorite {
+  font-size: 1.5em;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
