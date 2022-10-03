@@ -1,4 +1,3 @@
-import CONFIG from '../globals/config';
 import API_ENDPOINT from '../globals/api-endpoint';
 
 class ApiSource {
@@ -18,7 +17,6 @@ class ApiSource {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Auth-Token': CONFIG.API_TOKEN,
       },
       body: JSON.stringify(review),
     });
